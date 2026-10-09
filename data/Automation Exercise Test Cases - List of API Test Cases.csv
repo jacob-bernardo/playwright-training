@@ -1,0 +1,28 @@
+BASE URL:,https://automationexercise.com/api,,,,,,
+TC ID,Module,Scenario,API,Method,Endpoint,Priority,Expected Result
+API-SM-001,Product Catalog,Get all products,API1,GET,/productsList,High,200 OK and products returned
+API-SM-002,Product Catalog,Validate products schema,API1,GET,/productsList,High,Schema valid
+API-SM-003,Product Catalog,Products list not empty,API1,GET,/productsList,High,At least one product
+API-SM-004,Product Catalog,POST not allowed,API2,POST,/productsList,High,405
+API-SM-005,Product Catalog,Search existing product,API5,POST,/searchProduct,High,Matching result
+API-SM-006,Product Catalog,Search partial product,API5,POST,/searchProduct,Medium,Matching results
+API-SM-007,Product Catalog,Search nonexistent,API5,POST,/searchProduct,Medium,No results
+API-SM-008,Product Catalog,Missing search parameter,API6,POST,/searchProduct,High,Validation error
+API-SM-009,Brand Catalog,Get brands,API3,GET,/brandsList,High,Brands returned
+API-SM-010,Brand Catalog,Validate brands schema,API3,GET,/brandsList,Medium,Schema valid
+API-SM-011,Brand Catalog,PUT not allowed,API4,PUT,/brandsList,High,405
+API-SM-012,Authentication,Valid login,API7,POST,/verifyLogin,High,Verified
+API-SM-013,Authentication,Invalid password,API10,POST,/verifyLogin,High,Rejected
+API-SM-014,Authentication,Invalid email,API10,POST,/verifyLogin,High,Rejected
+API-SM-015,Authentication,Missing email,API8,POST,/verifyLogin,High,Validation error
+API-SM-016,Authentication,Missing password,API8,POST,/verifyLogin,High,Validation error
+API-SM-017,Authentication,Missing credentials,API8,POST,/verifyLogin,High,Validation error
+API-SM-018,Authentication,DELETE not allowed,API9,DELETE,/verifyLogin,High,405
+API-SM-019,User Account,Create account,API11,POST,/createAccount,High,Created
+API-SM-020,User Account,Create duplicate account,API11,POST,/createAccount,Medium,Duplicate error
+API-SM-021,User Account,Get user by email,API14,GET,/getUserDetailByEmail,High,User returned
+API-SM-022,User Account,Unknown email,API14,GET,/getUserDetailByEmail,Medium,Not found
+API-SM-023,User Account,Update account,API13,PUT,/updateAccount,High,Updated
+API-SM-024,User Account,Delete account,API12,DELETE,/deleteAccount,High,Deleted
+API-SM-025,User Account,Login after deletion,API10,POST,/verifyLogin,Medium,Rejected
+API-SM-026,E2E,Complete account lifecycle,API11→7→14→13→12,Mixed,Multiple,High,Lifecycle successful
