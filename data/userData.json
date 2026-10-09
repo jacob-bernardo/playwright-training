@@ -1,0 +1,20 @@
+{
+  "newUser": {
+    "name": "Jacob Bernardo",
+    "email": "jacob.test.user01@example.com",
+    "password": "Password123!",
+    "day": "15",
+    "month": "6",
+    "year": "1995",
+    "firstName": "Jacob",
+    "lastName": "Bernardo",
+    "company": "Automation QA Corp",
+    "address1": "123 Automation St",
+    "address2": "Suite 400",
+    "country": "United States",
+    "state": "California",
+    "city": "Los Angeles",
+    "zipcode": "90001",
+    "mobileNumber": "1234567890"
+  }
+}
