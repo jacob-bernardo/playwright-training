@@ -1,11 +1,11 @@
-import { test } from '@playwright/test';
-import { HomePage } from '../../pages/HomePage';
-import { AuthPage } from '../../pages/AuthPage';
-import { SignupPage } from '../../pages/SignupPage';
-import { AccountStatusPage } from '../../pages/AccountStatusPage';
-import userData from '../../data/userData.json';
+import { test } from "@playwright/test";
+import { HomePage } from "../../pages/HomePage";
+import { AuthPage } from "../../pages/AuthPage";
+import { SignupPage } from "../../pages/SignupPage";
+import { AccountStatusPage } from "../../pages/AccountStatusPage";
+import userData from "../../data/userData.json";
 
-test('Test Case 1: Register User Flow', async ({ page }) => {
+test("Test Case 1: Register User Flow", async ({ page }) => {
   const homePage = new HomePage(page);
   const authPage = new AuthPage(page);
   const signupPage = new SignupPage(page);
@@ -19,7 +19,6 @@ test('Test Case 1: Register User Flow', async ({ page }) => {
   await authPage.verifySignupHeader();
 
   // 6–7. Enter name/email and submit
-  // Tip: Generate a unique email per run to avoid "Email already exists"
   const dynamicEmail = `test_${Date.now()}@example.com`;
   await authPage.enterSignupDetails(userData.newUser.name, dynamicEmail);
   await authPage.clickSignup();
